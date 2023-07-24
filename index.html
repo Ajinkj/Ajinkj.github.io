@@ -24,6 +24,58 @@
   <link rel="stylesheet" href="css/jquery.fullPage.css">
   <link rel="stylesheet" href="css/templatemo-style.css">
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<style>
+		}
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-button i {
+  font-size: 24px;
+}
+
+.share{
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #365b5f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.share i {
+  font-size: 18px;
+}
+
+.whatsapp-black {
+  color: black;
+}
+	</style>
 
 </head>
 <body>
@@ -200,7 +252,13 @@
     </div>
     <!-- end contact -->
 
+<a href="javascript:void(0);" class="share" onclick="shareWebsite()">
+  <i class="fas fa-share-alt"></i>
+</a>  
 
+  <a href="https://wa.me/+916238946884?text=I%20like%20to%20know%20more%20about%20Invitx" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 		<!-- ... Your existing sections (home, work, about, portfolio, contact, footer) ... -->
 	
 		
@@ -238,6 +296,23 @@
   </div>
 
   <!-- Scripts -->
+	<script>
+    function shareWebsite() {
+if (navigator.share) {
+navigator.share({
+  title: 'Invitx',
+  text: 'Check out this amazing website!',
+  url: 'https://ajinkj.github.io/invitx/'
+})
+  .then(() => console.log('Shared successfully'))
+  .catch((error) => console.log('Error sharing:', error));
+} else {
+// Fallback for browsers that don't support Web Share API
+alert('Sharing is not supported on this browser.');
+}
+}
+
+  </script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.fullPage.js"></script>
